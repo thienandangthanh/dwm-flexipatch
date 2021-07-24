@@ -42,6 +42,7 @@ endif
 clean:
 	rm -f dwm ${OBJ} dwm-${VERSION}.tar.gz
 	rm -f dwm-msg
+	rm -f config.h patches.h
 
 dist: clean
 	mkdir -p dwm-${VERSION}
@@ -65,6 +66,7 @@ endif
 	mkdir -p ${DESTDIR}${MANPREFIX}/man1
 	sed "s/VERSION/${VERSION}/g" < dwm.1 > ${DESTDIR}${MANPREFIX}/man1/dwm.1
 	chmod 644 ${DESTDIR}${MANPREFIX}/man1/dwm.1
+	rm -f config.h patches.h
 
 uninstall:
 	rm -f ${DESTDIR}${PREFIX}/bin/dwm\
